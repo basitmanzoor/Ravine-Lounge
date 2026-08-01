@@ -1,0 +1,14 @@
+{
+  "name": "ravine-lounge",
+  "version": "1.0.0",
+  "description": "Ravine Lounge landing page with Resend reservation backend",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "resend": "^1.0.0"
+  }
+}

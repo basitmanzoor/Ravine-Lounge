@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ravine Lounge – Where Nature Meets Indulgence</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -311,43 +313,39 @@ h2.section-title em{font-style:italic;color:var(--brown)}
 .why-corner.bl{bottom:12px;left:12px;border-bottom-width:1px;border-left-width:1px}
 .why-corner.br{bottom:12px;right:12px;border-bottom-width:1px;border-right-width:1px}
 
-/* GALLERY */
-.gallery{background:var(--bg);text-align:center}
-.gallery-header{max-width:600px;margin:0 auto 4rem}
-.gallery-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  grid-template-rows:250px 250px;
-  gap:8px;max-width:1200px;margin:0 auto 3rem;
+/* INSTAGRAM */
+.instagram{background:var(--dark);color:var(--cream);position:relative;overflow:hidden}
+.instagram::before{
+  content:'@';position:absolute;left:-2rem;bottom:-7rem;
+  font-family:'Cormorant Garamond',serif;font-size:24rem;line-height:1;
+  color:rgba(212,169,106,0.045);pointer-events:none;
 }
-.gallery-item{
-  background:linear-gradient(135deg,var(--cream) 0%,var(--cream2) 100%);
-  position:relative;overflow:hidden;cursor:pointer;
-  border:1px solid rgba(179,139,89,0.2);
-  transition:all 0.4s ease;display:flex;align-items:center;justify-content:center;
-}
-.gallery-item:first-child{grid-row:1/3}
-.gallery-item:hover{border-color:rgba(179,139,89,0.6)}
-.gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-label{
-  position:absolute;bottom:1rem;left:1rem;
-  font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;
-  color:var(--gold);background:rgba(59,36,20,0.7);padding:0.4rem 0.8rem;
-  opacity:0;transition:opacity 0.4s;
-}
-.gallery-item:hover .gallery-label{opacity:1}
-.gallery-overlay{
-  position:absolute;inset:0;background:rgba(59,36,20,0.35);
-  opacity:0;transition:opacity 0.4s;
-  display:flex;align-items:center;justify-content:center;
-}
-.gallery-plus{color:var(--gold);font-size:1.5rem}
-.gallery-sketch-icon{
-  font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(92,58,33,0.25);
-  font-style:italic;
-}
+.instagram-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.instagram-header{display:flex;justify-content:space-between;align-items:flex-end;gap:3rem;margin-bottom:3rem}
+.instagram .section-tag{color:var(--gold-light)}
+.instagram .section-tag::before{background:var(--gold-light)}
+.instagram .section-title{color:var(--cream);margin-bottom:0}
+.instagram-copy{max-width:390px;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8;color:rgba(226,211,194,0.72)}
+.instagram-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:250px 250px;gap:10px}
+.instagram-tile{position:relative;overflow:hidden;display:block;background:#27170f}
+.instagram-tile:nth-child(1){grid-column:1/8;grid-row:1/3}
+.instagram-tile:nth-child(2){grid-column:8/13;grid-row:1}
+.instagram-tile:nth-child(3){grid-column:8/11;grid-row:2}
+.instagram-tile:nth-child(4){grid-column:11/13;grid-row:2}
+.instagram-tile img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 0.7s cubic-bezier(.2,.7,.2,1)}
+.instagram-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(35,20,12,0.78));opacity:0.45;transition:opacity 0.4s}
+.instagram-tile:hover img{transform:scale(1.045)}
+.instagram-tile:hover::after{opacity:0.85}
+.instagram-caption{position:absolute;left:1.2rem;right:1.2rem;bottom:1.1rem;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--cream)}
+.instagram-caption span:first-child{font-family:'Cinzel',serif;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase}
+.instagram-caption span:last-child{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold-light);opacity:0;transform:translateX(-8px);transition:opacity 0.35s,transform 0.35s}
+.instagram-tile:hover .instagram-caption span:last-child{opacity:1;transform:translateX(0)}
+.instagram-follow{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-top:1px solid rgba(212,169,106,0.2);padding-top:1.5rem}
+.instagram-handle{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.22em;color:var(--gold-light)}
+.instagram-link{display:inline-flex;align-items:center;padding:0.9rem 1.4rem;border:1px solid rgba(212,169,106,0.5);color:var(--cream);font-family:'Cinzel',serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:background 0.3s,color 0.3s}
+.instagram-link:hover{background:var(--gold);color:var(--dark)}
 
-/* OPENING SOON */
+/* NOW OPEN */
 .opening{
   background:var(--dark);color:var(--cream);text-align:center;
   position:relative;overflow:hidden;
@@ -385,27 +383,45 @@ h2.section-title em{font-style:italic;color:var(--brown)}
 .countdown-inner .big{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);line-height:1}
 .countdown-inner .small{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.25em;color:rgba(226,211,194,0.5)}
 
-/* TESTIMONIALS */
-.testimonials{background:var(--cream2);text-align:center;padding:6rem 5%}
-.testimonials .section-tag{justify-content:center}
-.testimonial-card{
-  max-width:700px;margin:3rem auto 0;
-  background:var(--bg);border:1px solid rgba(179,139,89,0.2);
-  padding:3rem;position:relative;
+/* GOOGLE REVIEWS */
+.reviews{background:var(--cream2);position:relative;overflow:hidden}
+.reviews::before{
+  content:'R';position:absolute;right:-1rem;top:-5rem;
+  font-family:'Cinzel',serif;font-size:26rem;line-height:1;color:rgba(179,139,89,0.055);
+  pointer-events:none;
 }
-.testimonial-card::before{
-  content:'\201C';font-family:'Cormorant Garamond',serif;font-size:8rem;
-  color:rgba(179,139,89,0.12);position:absolute;top:-1rem;left:1.5rem;line-height:1;
+.reviews-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.reviews-heading{display:grid;grid-template-columns:1fr 0.8fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.reviews-intro{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.8;
+  color:var(--brown);max-width:500px;margin-left:auto;
 }
-.testimonial-text{
-  font-family:'Cormorant Garamond',serif;font-size:1.35rem;
-  color:var(--dark);font-style:italic;line-height:1.7;position:relative;z-index:1;
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.review-card{
+  min-height:230px;background:var(--bg);border:1px solid rgba(179,139,89,0.22);
+  padding:2.1rem;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;transition:transform 0.35s ease,border-color 0.35s ease,box-shadow 0.35s ease;
 }
-.testimonial-coming{
-  font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.3em;
-  color:var(--gold);margin-top:1.5rem;text-transform:uppercase;
+.review-card::before{content:'';position:absolute;left:0;top:0;width:2px;height:0;background:var(--gold);transition:height 0.35s ease}
+.review-card:hover{transform:translateY(-6px);border-color:rgba(179,139,89,0.55);box-shadow:0 18px 45px rgba(59,36,20,0.08)}
+.review-card:hover::before{height:100%}
+.review-source{font-family:'Cinzel',serif;color:var(--gold);font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:1.5rem}
+.review-card h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--dark);font-weight:600;margin-bottom:0.65rem}
+.review-card p{font-family:'Inter',sans-serif;font-size:0.8rem;line-height:1.8;color:rgba(92,58,33,0.75)}
+.review-card-label{font-family:'Cinzel',serif;font-size:0.56rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-top:1.5rem}
+.reviews-footer{
+  margin-top:2rem;padding:1.5rem 1.8rem;background:var(--dark);color:var(--cream);
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
 }
-.stars{color:var(--gold);letter-spacing:0.2em;font-size:0.8rem;margin-bottom:1rem}
+.google-lockup{font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase}
+.google-lockup span{display:block;font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0;text-transform:none;color:var(--gold-light);margin-top:0.3rem}
+.google-review-link{
+  display:inline-flex;align-items:center;gap:0.8rem;padding:0.9rem 1.35rem;
+  border:1px solid rgba(212,169,106,0.55);color:var(--cream);text-decoration:none;
+  font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;
+  white-space:nowrap;transition:background 0.3s,color 0.3s;
+}
+.google-review-link:hover{background:var(--gold);color:var(--dark)}
 
 /* CONTACT */
 .contact{background:var(--bg);position:relative}
@@ -509,9 +525,13 @@ footer{
 /* MOBILE */
 @media(max-width:900px){
   .about-inner,.why-inner,.contact-inner{grid-template-columns:1fr;gap:3rem}
+  .reviews-heading{grid-template-columns:1fr;gap:1.2rem}
+  .reviews-intro{margin-left:0}
+  .reviews-grid{grid-template-columns:1fr 1fr}
+  .review-card:last-child{grid-column:1/-1}
+  .instagram-header{align-items:flex-start;flex-direction:column;gap:1.2rem}
+  .instagram-grid{grid-template-rows:220px 220px}
   .exp-grid{grid-template-columns:1fr 1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .gallery-item:first-child{grid-row:auto}
   .footer-top{flex-direction:column}
   .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;
     background:rgba(59,36,20,0.97);flex-direction:column;gap:0;padding:2rem 0;}
@@ -529,6 +549,17 @@ footer{
   .about-frame{aspect-ratio:4/4.6}
   .hero-btns{flex-direction:column;align-items:center}
   .about-stats{flex-wrap:wrap;gap:1.5rem}
+  .reviews-grid{grid-template-columns:1fr}
+  .review-card:last-child{grid-column:auto}
+  .reviews-footer{align-items:flex-start;flex-direction:column}
+  .google-review-link{width:100%;justify-content:center}
+  .instagram-grid{grid-template-columns:1fr 1fr;grid-template-rows:280px 170px 170px}
+  .instagram-tile:nth-child(1){grid-column:1/3;grid-row:1}
+  .instagram-tile:nth-child(2){grid-column:1;grid-row:2}
+  .instagram-tile:nth-child(3){grid-column:2;grid-row:2}
+  .instagram-tile:nth-child(4){grid-column:1/3;grid-row:3}
+  .instagram-follow{align-items:flex-start;flex-direction:column}
+  .instagram-link{width:100%;justify-content:center}
   section{padding:5rem 5%}
 }
 
@@ -544,6 +575,32 @@ footer{
   position:fixed;pointer-events:none;z-index:9998;
   transition:transform 0.4s ease, width 0.3s, height 0.3s, opacity 0.3s;
 }
+.popup-overlay{
+  position:fixed;inset:0;background:rgba(59,36,20,0.72);backdrop-filter:blur(4px);
+  display:none;align-items:center;justify-content:center;z-index:10010;
+}
+.popup-overlay.active{display:flex;}
+.popup-box{
+  width:min(520px,90%);background:var(--cream);border:1px solid rgba(179,139,89,0.35);
+  box-shadow:0 28px 80px rgba(59,36,20,0.2);padding:3rem 2.5rem;border-radius:28px;
+  text-align:center;position:relative;
+}
+.popup-mark{
+  font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:0.35em;color:var(--gold);
+  margin-bottom:1rem;text-transform:uppercase;
+}
+.popup-title{
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--dark);margin-bottom:1rem;
+}
+.popup-text{
+  font-family:'Inter',sans-serif;font-size:1rem;color:var(--brown);line-height:1.8;margin-bottom:2rem;
+}
+.popup-close{
+  background:var(--dark);color:var(--gold);border:none;padding:0.95rem 2rem;
+  border-radius:2px;font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.2em;
+  text-transform:uppercase;cursor:pointer;transition:transform 0.25s ease,background 0.25s ease;
+}
+.popup-close:hover{background:var(--brown);transform:translateY(-2px);}
 </style>
 </head>
 <body>
@@ -551,6 +608,15 @@ footer{
 <!-- CURSOR -->
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
+
+<div class="popup-overlay" id="reservationPopup" aria-hidden="true">
+  <div class="popup-box">
+    <div class="popup-mark">RAVINE</div>
+    <h2 class="popup-title">Reservation Sent</h2>
+    <p class="popup-text">Your reservation request has been sent successfully. We’ll contact you shortly to confirm your table.</p>
+    <button class="popup-close" id="popupClose">Okay</button>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -562,7 +628,8 @@ footer{
     <li><a href="#about">About</a></li>
     <li><a href="#experiences">Experience</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Reserve Table</a></li>
   </ul>
@@ -584,7 +651,7 @@ footer{
     <h1 class="hero-title">RAVINE<br>LOUNGE</h1>
     <p class="hero-subtitle">Where Nature Meets Indulgence</p>
     <p class="hero-desc">A premium destination where fine dining, artisan coffee, and unforgettable experiences come together in a serene, nature-inspired setting.</p>
-    <div class="opening-badge">◆ Opening Soon ◆</div>
+    <div class="opening-badge">◆ Now Open ◆</div>
     <p class="hero-legal"><span>  FSSAI Lic. No:</span> <strong> 21026419000492</strong> · <span>Trademark No:</span> <strong> 7718405 <sup>TM</sup> </strong></p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Reserve Your Table ↗</a>
@@ -720,57 +787,47 @@ footer{
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <div class="gallery-header reveal">
-    <div class="section-tag" style="justify-content:center">Gallery Preview</div>
-    <h2 class="section-title">Discover the <em>Ravine</em> Experience</h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--brown);line-height:1.8;margin-top:1rem">Beautiful spaces, exceptional cuisine, handcrafted beverages, and unforgettable moments await.</p>
-  </div>
-  <div class="gallery-grid reveal">
-    <div class="gallery-item" style="grid-row:1/3">
-      <div class="gallery-sketch-icon" style="font-size:3rem;color:rgba(92,58,33,0.2)">
-        <svg viewBox="0 0 120 160" width="100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 140 L30 90 L50 110 L60 70 L70 100 L90 80 L110 120" fill="none" stroke="#5C3A21" stroke-width="1.5"/>
-          <rect x="45" y="110" width="30" height="30" fill="none" stroke="#5C3A21" stroke-width="1.2"/>
-          <polygon points="22,110 32,88 42,110" fill="none" stroke="#5C3A21" stroke-width="1"/>
-          <polygon points="78,108 88,87 98,108" fill="none" stroke="#5C3A21" stroke-width="1"/>
-          <path d="M15 148 Q45 140 60 145 Q75 150 105 140" fill="none" stroke="#B38B59" stroke-width="1"/>
-        </svg>
+<!-- INSTAGRAM -->
+<section class="instagram" id="instagram">
+  <div class="instagram-inner">
+    <div class="instagram-header reveal">
+      <div>
+        <div class="section-tag">From Our Instagram</div>
+        <h2 class="section-title">A Glimpse of<br><em style="color:var(--gold-light)">Ravine Life</em></h2>
       </div>
-      <div class="gallery-label">The View</div>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+      <p class="instagram-copy">Follow the flavours, quiet corners, and memorable moments that make every visit to Ravine Lounge uniquely yours.</p>
     </div>
-    <div class="gallery-item">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(92,58,33,0.3);font-style:italic">Fine Dining</div>
-      <div class="gallery-label">Cuisine</div>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    <div class="instagram-grid reveal">
+      <a class="instagram-tile" href="https://www.instagram.com/ravinelounge" target="_blank" rel="noopener noreferrer" aria-label="Explore Ravine Lounge dining on Instagram">
+        <img src="assets/instagram-interior.png" alt="Warm, nature-inspired dining room at Ravine Lounge" loading="lazy">
+        <div class="instagram-caption"><span>Inside Ravine</span><span>View ↗</span></div>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/ravinelounge" target="_blank" rel="noopener noreferrer" aria-label="Explore Ravine Lounge cuisine on Instagram">
+        <img src="assets/instagram-dining.png" alt="Elegantly plated signature dish at Ravine Lounge" loading="lazy">
+        <div class="instagram-caption"><span>On the Table</span><span>View ↗</span></div>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/ravinelounge" target="_blank" rel="noopener noreferrer" aria-label="Explore Ravine Lounge coffee on Instagram">
+        <img src="assets/instagram-coffee.png" alt="Artisan coffee served in a handmade ceramic cup" loading="lazy">
+        <div class="instagram-caption"><span>Artisan Brew</span><span>View ↗</span></div>
+      </a>
+      <a class="instagram-tile" href="https://www.instagram.com/ravinelounge" target="_blank" rel="noopener noreferrer" aria-label="Explore Ravine Lounge desserts on Instagram">
+        <img src="assets/instagram-dessert.png" alt="Refined dessert and botanical drink at Ravine Lounge" loading="lazy">
+        <div class="instagram-caption"><span>Sweet Details</span><span>View ↗</span></div>
+      </a>
     </div>
-    <div class="gallery-item">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(92,58,33,0.3);font-style:italic">Artisan Brew</div>
-      <div class="gallery-label">Coffee Bar</div>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(92,58,33,0.3);font-style:italic">Lounge Area</div>
-      <div class="gallery-label">Ambience</div>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
-    </div>
-    <div class="gallery-item">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(92,58,33,0.3);font-style:italic">Celebrations</div>
-      <div class="gallery-label">Events</div>
-      <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
+    <div class="instagram-follow reveal">
+      <div class="instagram-handle">@RAVINELOUNGE</div>
+      <a class="instagram-link" href="https://www.instagram.com/ravinelounge" target="_blank" rel="noopener noreferrer">Follow on Instagram ↗</a>
     </div>
   </div>
-  <p style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);text-align:center">PHOTOGRAPHY COMING SOON</p>
 </section>
 
-<!-- OPENING SOON -->
+<!-- NOW OPEN -->
 <section class="opening">
   <div class="opening-content reveal">
-    <div class="section-tag" style="justify-content:center">Stay Tuned</div>
-    <h2 class="section-title">Something Extraordinary<br>is <em style="font-style:italic;color:rgba(212,169,106,0.8)">Coming</em></h2>
-    <p class="opening-desc">We're preparing to welcome you to an experience unlike any other. Join our community and be among the first to know about our grand opening, exclusive events, and special offers.</p>
+    <div class="section-tag" style="justify-content:center">Now Open</div>
+    <h2 class="section-title">Something Extraordinary<br>is <em style="font-style:italic;color:rgba(212,169,106,0.8)">Here</em></h2>
+    <p class="opening-desc">Ravine Lounge is now open and ready to welcome you. Join us for fine dining, artisan coffee, unforgettable experiences, exclusive events, and special offers.</p>
     <div class="countdown-ring">
       <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
         <circle cx="80" cy="80" r="72" fill="none" stroke="rgba(179,139,89,0.15)" stroke-width="1"/>
@@ -784,10 +841,10 @@ footer{
       </svg>
       <div class="countdown-inner">
         <div class="big">2026</div>
-        <div class="small">OPENING YEAR</div>
+        <div class="small">NOW OPEN</div>
       </div>
     </div>
-    <div class="opening-stay">Stay Tuned.</div>
+    <div class="opening-stay">We Are Open.</div>
     <a href="https://instagram.com/ravinelounge" class="opening-social">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       Follow Us on Instagram
@@ -795,16 +852,46 @@ footer{
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="reveal">
-    <div class="section-tag" style="justify-content:center">Testimonials</div>
-    <h2 class="section-title">Future Memories <em>Start Here</em></h2>
-  </div>
-  <div class="testimonial-card reveal">
-    <div class="stars">★ ★ ★ ★ ★</div>
-    <p class="testimonial-text">"A place designed for great conversations, remarkable food, and unforgettable experiences."</p>
-    <p class="testimonial-coming">★ Testimonials Coming After Grand Opening ★</p>
+<!-- GOOGLE REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-heading reveal">
+      <div>
+        <div class="section-tag">Guest Stories</div>
+        <h2 class="section-title">Your Words,<br><em>Our Inspiration</em></h2>
+      </div>
+      <p class="reviews-intro">Every visit becomes part of the Ravine story. Discover what our guests are sharing about their dining experience, the ambience, and the hospitality on Google.</p>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card reveal reveal-delay-1">
+        <div>
+          <div class="review-source">From Google Reviews</div>
+          <h3>Memorable Dining</h3>
+          <p>Explore genuine guest feedback about the flavours, presentation, and thoughtful details that shape every meal at Ravine Lounge.</p>
+        </div>
+        <div class="review-card-label">Cuisine · Google Reviews</div>
+      </article>
+      <article class="review-card reveal reveal-delay-2">
+        <div>
+          <div class="review-source">From Google Reviews</div>
+          <h3>A Refined Ambience</h3>
+          <p>Read how guests describe our warm, nature-inspired interiors and the atmosphere created for conversations and celebrations.</p>
+        </div>
+        <div class="review-card-label">Ambience · Google Reviews</div>
+      </article>
+      <article class="review-card reveal reveal-delay-3">
+        <div>
+          <div class="review-source">From Google Reviews</div>
+          <h3>Thoughtful Hospitality</h3>
+          <p>See the experiences our guests have shared about the care, warmth, and attention offered by the Ravine Lounge team.</p>
+        </div>
+        <div class="review-card-label">Service · Google Reviews</div>
+      </article>
+    </div>
+    <div class="reviews-footer reveal">
+      <div class="google-lockup">Reviews on Google<span>See every guest story, or share your own.</span></div>
+      <a class="google-review-link" href="https://share.google/mfufUNgtSRODvlH7R" target="_blank" rel="noopener noreferrer" aria-label="Read Ravine Lounge reviews on Google">Read Google Reviews ↗</a>
+    </div>
   </div>
 </section>
 
@@ -840,42 +927,45 @@ footer{
     <div class="contact-form-side reveal-right">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:0.5rem;font-weight:600">Reserve Your Table</h3>
       <p style="font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--brown);margin-bottom:2rem">Share your reservation details and we'll confirm your table availability shortly.</p>
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="Saliq Hamid">
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="saliq123@gmail.com">
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+91 00000 00000">
-      </div>
-      <div class="form-group">
-        <label>No. of People</label>
-        <select>
-          <option value="">Select party size</option>
-          <option value="1">1 person</option>
-          <option value="2">2 people</option>
-          <option value="3">3 people</option>
-          <option value="4">4 people</option>
-          <option value="5">5 people</option>
-          <option value="6">6 people</option>
-          <option value="7+">7+ people</option>
-        </select>
-      </div>
-      <div class="form-row">
+      <form id="reservationForm">
+        <input type="text" name="_honey" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;top:auto;overflow:hidden;" aria-hidden="true">
         <div class="form-group">
-          <label>Date</label>
-          <input type="date">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Saliq Hamid" required>
         </div>
         <div class="form-group">
-          <label>Time</label>
-          <input type="time">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="saliq123@gmail.com" required>
         </div>
-      </div>
-      <button class="btn-primary" style="width:100%;justify-content:center" onclick="handleSubmit()">Request Reservation ↗</button>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="+91 00000 00000" required>
+        </div>
+        <div class="form-group">
+          <label>No. of People</label>
+          <select name="partySize" required>
+            <option value="">Select party size</option>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+            <option value="7+">7+ people</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" name="time" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Request Reservation ↗</button>
+      </form>
       <div id="formMsg" style="display:none;margin-top:1rem;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--brown);font-style:italic;text-align:center">Thank you! We'll confirm your reservation soon. ✦</div>
     </div>
   </div>
@@ -901,7 +991,6 @@ footer{
           <li><a href="#about">About</a></li>
           <li><a href="#experiences">Our Experience</a></li>
           <li><a href="#why">Why Ravine</a></li>
-          <li><a href="#gallery">Gallery</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -972,7 +1061,7 @@ function animateCursor(){
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
-document.querySelectorAll('a,button,.exp-card,.gallery-item').forEach(el=>{
+document.querySelectorAll('a,button,.exp-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>{
     ring.style.width='60px';ring.style.height='60px';
     ring.style.borderColor='rgba(179,139,89,0.8)';
@@ -986,17 +1075,88 @@ document.querySelectorAll('a,button,.exp-card,.gallery-item').forEach(el=>{
 });
 
 // FORM SUBMIT
-function handleSubmit(){
-  const inputs=document.querySelectorAll('.form-group input,.form-group textarea,.form-group select');
-  let valid=true;
-  inputs.forEach(i=>{if(!i.value.trim())valid=false;});
-  if(valid){
-    inputs.forEach(i=>i.value='');
-    document.getElementById('formMsg').style.display='block';
-    setTimeout(()=>document.getElementById('formMsg').style.display='none',4000);
-  } else {
-    alert('Please fill in all fields before submitting.');
-  }
+const reservationForm=document.getElementById('reservationForm');
+const formMsg=document.getElementById('formMsg');
+const showFormMessage=(message,color='var(--brown)')=>{
+  if(!formMsg) return;
+  formMsg.textContent=message;
+  formMsg.style.color=color;
+  formMsg.style.display='block';
+};
+const hideFormMessage=()=>{
+  if(!formMsg) return;
+  formMsg.style.display='none';
+};
+if(reservationForm){
+  reservationForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+    hideFormMessage();
+    const formData=new FormData(reservationForm);
+    let valid=true;
+    for(const [name, value] of formData.entries()){
+      if(name === '_honey') continue;
+      if(!value || !value.toString().trim()){
+        valid=false;
+        break;
+      }
+    }
+    if(!valid){
+      showFormMessage('Please fill in all fields before submitting.', 'var(--dark)');
+      return;
+    }
+    if(formData.get('_honey') && formData.get('_honey').toString().trim() !== ''){
+      // Bot detected, silently reject the request.
+      return;
+    }
+    try{
+      const response=await fetch('/api/reservation',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name:formData.get('name'),
+          email:formData.get('email'),
+          phone:formData.get('phone'),
+          partySize:formData.get('partySize'),
+          date:formData.get('date'),
+          time:formData.get('time'),
+          _honey:formData.get('_honey')
+        })
+      });
+      if(!response.ok){
+        const errorData=await response.json();
+        throw new Error(errorData.error||'Submission failed.');
+      }
+      reservationForm.reset();
+      const popupEl=document.getElementById('reservationPopup');
+      if(popupEl){
+        popupEl.classList.add('active');
+        popupEl.setAttribute('aria-hidden','false');
+      }
+      showFormMessage("Your request has been sent. We'll confirm your reservation soon.", 'var(--dark)');
+      setTimeout(hideFormMessage, 5000);
+    }catch(err){
+      showFormMessage('Submission failed. Please try again later.', 'crimson');
+      console.error(err);
+    }
+  });
+}
+const popup=document.getElementById('reservationPopup');
+const popupClose=document.getElementById('popupClose');
+if(popup && popupClose){
+  popupClose.addEventListener('click',()=>{
+    popupClose.blur();
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden','true');
+  });
+  popup.addEventListener('click',event=>{
+    if(event.target===popup){
+      if(document.activeElement===popupClose){
+        popupClose.blur();
+      }
+      popup.classList.remove('active');
+      popup.setAttribute('aria-hidden','true');
+    }
+  });
 }
 
 // SMOOTH SCROLL for all anchors
